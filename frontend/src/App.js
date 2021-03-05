@@ -1,14 +1,17 @@
 import React from 'react';
-import useState from 'react';
-import Account from './Component/Account'
+import {useState} from 'react';
+import './App.css';
+import Account from './component/Account';
 
-export default function App() {
+function App() {
 
-    //const [user, setUser] = useState(false);
+    const [token, setToken] = useState(null)
 
     return (
-        /*user ? <div>Hello</div> : */<Account />
+        
+        token ? <h1>Bienvenue</h1> : <Account onConnect={setToken}/>
+        
     );
 }
 
-
+export default App;

@@ -27,9 +27,9 @@ exports.login = (req, res, next) => {
     const email = req.body.login;
     const password = req.body.password;
 
-    if (email === 'aaa' && password === '000') {
+    if (email === 'aaa' && password === 'aaa') {
         return res.send({
-            token: 'test123'
+            token : 'test123'
         });
     } else {
         console.log('login incorrect');

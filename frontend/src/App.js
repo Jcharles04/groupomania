@@ -1,22 +1,14 @@
 import React from 'react';
-//import {useState, useEffect} from 'react';
+//import {useState} from 'react';
 import Account from './component/Account';
+import useToken from './component/token/Token'
 
-
-function getToken() {
-    const tokenString = localStorage.getItem('token');
-    const userToken = JSON.parse(tokenString);
-    return userToken?.token
-}
 
 export default function App() {
 
-    const token = {getToken};
+    const {token, setToken } = useToken();
 
-    if(!token) {
-        return  <Account/>
-    } else {
-        return <h1>Bienvenue</h1>
-    }
+    return (
+        token? <h1>Bienvenue</h1> : <Account setToken={setToken}/>
+    )
 }
-

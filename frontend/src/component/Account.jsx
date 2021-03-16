@@ -3,9 +3,11 @@ import {useState} from 'react';
 import Connexion from './LoginForm';
 import Inscription from './SignupForm';
 
+
 export default function Account() {
 
-    const [page, setPage] = useState('Connexion')
+    const [page, setPage] = useState('Connexion');
+    
 
     let content = null
     if (page === 'Connexion') {

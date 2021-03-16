@@ -1,12 +1,11 @@
-import React from 'react';
 import {useState} from 'react';
-
 
 export default function Connexion () {
 
     const [login, setLogin] = useState('');
-    const [password, setPassword] = useState('');
-    
+    const [password, setPassword] = useState(''); 
+
+
     const handleSubmit = async function (e) {
         e.preventDefault();
         const response = await fetch('http://localhost:8080/login/', {
@@ -19,13 +18,12 @@ export default function Connexion () {
         if (response.ok) {
             const json = await response.json();
             console.log(json);
-            window.localStorage.setItem("token", JSON.stringify(json))
-            return json?.token;
-            
+            window.localStorage.setItem('token', JSON.stringify(json))
+            return json?.token
         } else {
             console.log('erreur serveur %s', response.status, response.statusText);
         }
-    }
+    } 
 
     return (
         <div>
@@ -44,3 +42,5 @@ export default function Connexion () {
         </div>
     )
 }
+
+
